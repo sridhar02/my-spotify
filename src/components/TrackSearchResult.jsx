@@ -9,7 +9,11 @@ export default function TrackSearchResult({ track, chooseTrack }) {
 
   return (
     <div className={styles.container} onClick={handlePlay}>
-      <img className={styles.trackImage} src={track.albumUrl} />
+      <img
+        className={styles.trackImage}
+        src={track.albumUrl}
+        alt={`${track.title} cover details`}
+      />
       <div className={styles.title}>
         <div>{track.title}</div>
         <div>{track.artist}</div>
