@@ -11,6 +11,8 @@ const spotifyApi = new SpotifyWebApi({
   clientId: '915414a88f924f2f8a6b263e20b38cd3',
 });
 
+const serverURL = process.env.REACT_APP_SERVER_URL;
+
 export default function Dashboard({ code }) {
   const accessToken = useAuth(code);
   const [search, setSearch] = useState('');
@@ -27,7 +29,7 @@ export default function Dashboard({ code }) {
   useEffect(() => {
     if (!playingTrack) return;
     axios
-      .get('http://localhost:3001/lyrics', {
+      .get(`${serverURL}/lyrics`, {
         params: {
           track: playingTrack.title,
           artist: playingTrack.artist,

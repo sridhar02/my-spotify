@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 
+const serverURL = process.env.REACT_APP_SERVER_URL;
+
 export default function useAuth(code) {
   const [accessToken, setAccessToken] = useState();
   const [refreshToken, setRefreshToken] = useState();
@@ -9,7 +11,7 @@ export default function useAuth(code) {
   useEffect(() => {
     if (!code) return;
     axios
-      .post('http://localhost:3001/login', { code })
+      .post(`${serverURL}/login`, { code })
       .then((res) => {
         setAccessToken(res.data.accessToken);
         setRefreshToken(res.data.refreshToken);
@@ -25,7 +27,7 @@ export default function useAuth(code) {
     if (!refreshToken || !expiresIn) return;
     const timeout = setInterval(() => {
       axios
-        .post('http://localhost:3001/refresh', { refreshToken })
+        .post(`${serverURL}/refresh`, { refreshToken })
         .then((res) => {
           setAccessToken(res.data.accessToken);
           setExpiresIn(res.data.expiresIn);
