@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  margin: 2px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.trackImage {
+  height: 64px;
+  width: 64px;
+}
+
+.title {
+  margin-left: 3px;
+}

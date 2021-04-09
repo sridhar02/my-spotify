@@ -1,0 +1,25 @@
+.container {
+  margin: 0px 15px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.searchField {
+  width: 95vw;
+  height: 2.5rem;
+  padding: 0.8rem;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.songsList {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.lyrics {
+  text-align: center;
+  white-space: pre;
+}
