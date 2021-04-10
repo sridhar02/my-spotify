@@ -74,8 +74,6 @@ export default function Dashboard({ code }) {
     return () => (cancel = true);
   }, [search, accessToken]);
 
-  console.log(searchResults);
-
   return (
     <div className={styles.container}>
       <input
@@ -97,7 +95,7 @@ export default function Dashboard({ code }) {
           <div className={styles.lyrics}>{lyrics}</div>
         )}
       </div>
-      <div>
+      <div className={styles.playerContainer}>
         <Player accessToken={accessToken} trackUri={playingTrack?.uri} />
       </div>
     </div>

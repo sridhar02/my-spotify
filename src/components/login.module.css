@@ -5,13 +5,14 @@
   color: #fff;
   border-radius: 0.5rem;
   text-decoration: none;
-  font-weight: 500;
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .container{
     height:100vh;
     display: flex;
+    flex-direction:column;
     justify-content: center;
     align-items: center;
+    background:black;
 }
